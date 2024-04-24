@@ -18,14 +18,9 @@ const AskQuestion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log({ questionTitle, questionBody, questionTags})
-        if (User){
-            if ( questionTitle && questionBody && questionTags ) {
-                dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: User.result.name, userId: User?.result?._id }, navigate));
-            } else alert("Please enter all the fields");
-        } else {
-            alert("Login or Signup to ask a question");
-            navigate('/Auth')
-        }
+        if ( questionTitle && questionBody && questionTags ) {
+            dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: User.result.name, userId: User?.result?._id }, navigate));
+        } else alert("Please enter all the fields");
     };
 
     const handleEnter = (e) => {
